@@ -8,18 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    var friendList:[[String:String]] = [["name":"lee", "phone":"010-1111-2222"], ["name":"kim", "phone":"010-2222-3333"]]
+    @IBOutlet weak var friendListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        friendListTableView.delegate = self
+        friendListTableView.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendcell", for: indexPath)
+        cell.textLabel?.text = friendList[indexPath.row]["name"]
+        cell.detailTextLabel?.text = friendList[indexPath.row]["phone"]
+        return cell
     }
-
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendList.count
+    }
+    
+    @IBAction func getNewFriendData(_ sender: UIStoryboardSegue){
+        if let from = sender.source as? AddFriendViewController {
+            var newFriend = [String:String]()
+            newFriend["name"] = from.nameTextField.text
+            newFriend["phone"] = from.phoneTextField.text
+            friendList.append(newFriend)
+            
+            friendListTableView.reloadData()
+        }
+    }
 }
 

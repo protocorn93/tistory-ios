@@ -21,12 +21,28 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendcell" id="c06-Zg-W4A">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendcell" textLabel="fp5-uV-oiN" detailTextLabel="068-Ny-Cgp" style="IBUITableViewCellStyleValue1" id="c06-Zg-W4A">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c06-Zg-W4A" id="w3R-gC-aKo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fp5-uV-oiN">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="068-Ny-Cgp">
+                                                    <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -48,6 +64,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="friendListTableView" destination="B0b-YR-cGe" id="Pdx-U7-Pjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +75,7 @@
         <!--Add Friend-->
         <scene sceneID="Zqz-RC-Vms">
             <objects>
-                <viewController id="5Jq-Tj-KaI" sceneMemberID="viewController">
+                <viewController id="5Jq-Tj-KaI" customClass="AddFriendViewController" customModule="view_change_data_pass_sample1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZPr-rC-8d2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,10 +113,19 @@
                         <viewLayoutGuide key="safeArea" id="oTh-pH-ALY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Friend" id="3Vm-Hp-eLn">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="cr5-PZ-fWN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="cr5-PZ-fWN">
+                            <connections>
+                                <segue destination="e6I-LQ-zNd" kind="unwind" unwindAction="getNewFriendData:" id="XkO-og-klG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="QvK-Wr-7Gr" id="Py8-GU-o9p"/>
+                        <outlet property="phoneTextField" destination="icG-zd-rl4" id="E5a-Hq-hyh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngz-OF-6gH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="e6I-LQ-zNd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2040.8" y="492.50374812593708"/>
         </scene>

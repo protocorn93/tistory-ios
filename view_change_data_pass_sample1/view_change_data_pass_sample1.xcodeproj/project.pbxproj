@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E4D8A091FA9496C0086FD59 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D8A081FA9496C0086FD59 /* AddFriendViewController.swift */; };
 		3EF526E91FA8C89E00888DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF526E81FA8C89E00888DB2 /* AppDelegate.swift */; };
 		3EF526EB1FA8C89E00888DB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF526EA1FA8C89E00888DB2 /* ViewController.swift */; };
 		3EF526EE1FA8C89E00888DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF526EC1FA8C89E00888DB2 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E4D8A081FA9496C0086FD59 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		3EF526E51FA8C89E00888DB2 /* view_change_data_pass_sample1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = view_change_data_pass_sample1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF526E81FA8C89E00888DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EF526EA1FA8C89E00888DB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				3EF526E81FA8C89E00888DB2 /* AppDelegate.swift */,
 				3EF526EA1FA8C89E00888DB2 /* ViewController.swift */,
 				3EF526EC1FA8C89E00888DB2 /* Main.storyboard */,
+				3E4D8A081FA9496C0086FD59 /* AddFriendViewController.swift */,
 				3EF526EF1FA8C89E00888DB2 /* Assets.xcassets */,
 				3EF526F11FA8C89E00888DB2 /* LaunchScreen.storyboard */,
 				3EF526F41FA8C89E00888DB2 /* Info.plist */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E4D8A091FA9496C0086FD59 /* AddFriendViewController.swift in Sources */,
 				3EF526EB1FA8C89E00888DB2 /* ViewController.swift in Sources */,
 				3EF526E91FA8C89E00888DB2 /* AppDelegate.swift in Sources */,
 			);
