@@ -4,6 +4,6 @@
 ---
 
 1. 테이블 뷰 (기본, 커스텀)
-2. 텍스트 필드 Problem
+2. 텍스트 필드Hide Problem
 3. 화면 전환과 데이터 전달 - 1
 4. Horizontal Scroll View
