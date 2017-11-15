@@ -8,16 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate{
 
     
 
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    var images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpeg"]
+    @IBOutlet weak var pageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpeg"]
-        
+        scrollView.delegate = self
+        pageControl.numberOfPages = images.count
+        pageControl.currentPage = 0
         for i in 0..<images.count {
             let imageView = UIImageView()
             imageView.image = UIImage(named: images[i])
@@ -33,6 +35,12 @@ class ViewController: UIViewController {
             
             // 이미지의 너비가 얼마일지, 이미지가 몇개가 올라갈지 모르기 때문에 그러한 것들을 파악한 후 그에 맞춰 scroll view의 너비를 결정하는 것.
         }
+        self.view.bringSubview(toFront: pageControl)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPage = round(scrollView.contentOffset.x / self.view.frame.width)
+        pageControl.currentPage = Int(CGFloat(currentPage))
     }
 }
 
