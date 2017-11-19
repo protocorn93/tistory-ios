@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
     }
     
-    // touch screen 
+    // touch screen
     @objc func endEditing(){
         textField.resignFirstResponder()
     }
