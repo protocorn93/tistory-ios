@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="CRUD" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddFriendViewController" customModule="CRUD" customModuleProvider="target">
             <connections>
-                <outlet property="friendsTableView" destination="ye6-D9-xCR" id="oeX-Q0-1jU"/>
+                <outlet property="textFieldTableView" destination="HMw-Sk-Mcb" id="lHK-eK-ub5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,17 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-D9-xCR">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-Sk-Mcb">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ye6-D9-xCR" secondAttribute="trailing" id="Tsk-gU-cWI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ye6-D9-xCR" secondAttribute="bottom" id="a7C-bd-QvQ"/>
-                <constraint firstItem="ye6-D9-xCR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c8e-Ns-XA7"/>
-                <constraint firstItem="ye6-D9-xCR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tPn-sZ-lfO"/>
+                <constraint firstItem="HMw-Sk-Mcb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="87K-mo-1Xv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HMw-Sk-Mcb" secondAttribute="trailing" id="ReQ-j3-vzt"/>
+                <constraint firstItem="HMw-Sk-Mcb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Uw2-12-2uk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HMw-Sk-Mcb" secondAttribute="bottom" id="jqt-iP-Lpe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
