@@ -9,6 +9,8 @@
 import Foundation
 
 class Friend: Codable{
+    
+    static let didDelete = Notification.Name("Friend.Delete")
     var name:String
     var phone:String
     

@@ -76,31 +76,47 @@ extension AddFriendViewController {
 
 // MARK: UITableViewDataSource
 extension AddFriendViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.reuseableIdentifier, for: indexPath) as! TextFieldCell
-        if indexPath.row == 0 {
-            cell.label.text = "Name:"
-            if friend != nil {
-                cell.textField.text = friend?.name
-            }else{
-                cell.textField.placeholder = "이름을 입력하세요."
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                cell.label.text = "Name:"
+                if friend != nil {
+                    cell.textField.text = friend?.name
+                }else{
+                    cell.textField.placeholder = "이름을 입력하세요."
+                }
+                nameTextField = cell.textField
+                return cell
+            }else if indexPath.row == 1 {
+                cell.label.text = "Phone:"
+                if friend != nil  {
+                    cell.textField.text = friend?.phone
+                }else{
+                    cell.textField.placeholder = "-를 포함하여 입력해주세요."
+                }
+                phoneTextField = cell.textField
+                return cell
             }
-            nameTextField = cell.textField
-            return cell
-        }else if indexPath.row == 1 {
-            cell.label.text = "Phone:"
-            if friend != nil  {
-                cell.textField.text = friend?.phone
-            }else{
-                cell.textField.placeholder = "-를 포함하여 입력해주세요."
-            }
-            phoneTextField = cell.textField
+        }else if indexPath.section == 1 {
+            let cell = UITableViewCell()
+            cell.textLabel?.textColor = .red
+            cell.textLabel?.text = "Remove"
+            cell.textLabel?.textAlignment = .center
+        
             return cell
         }
+        
         
         return UITableViewCell()
     }
@@ -109,6 +125,15 @@ extension AddFriendViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension AddFriendViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if indexPath.section == 1 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let alert = UIAlertController(title: "삭제", message: "데이터를 삭제하시겠습니까?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+                NotificationCenter.default.post(name: Friend.didDelete, object: self.friend)
+                self.dismiss(animated: true, completion: nil)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
     }
 }

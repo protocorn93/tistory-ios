@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
         friendsTableView.delegate = self
         friendsTableView.dataSource = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteFriend(_:)), name: Friend.didDelete, object: nil)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
     
         friendsTableView.register(UINib(nibName: FriendCell.reuseableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCell.reuseableIdentifier)
@@ -49,6 +51,15 @@ extension MainViewController {
 // MARK: Target-Action method
 
 extension MainViewController {
+    @objc func deleteFriend(_ notification: Notification) {
+        guard let friend = notification.object as? Friend else { return  }
+        guard let index = friends.index(where: {$0.name == friend.name}) else { return  }
+        
+        friends.remove(at: index)
+        saveData()
+        friendsTableView.reloadData()
+    }
+    
     @objc func add(){
         let addVC = AddFriendViewController(friend: nil)
         
@@ -102,6 +113,7 @@ extension MainViewController: UITableViewDelegate {
         }
         present(UINavigationController(rootViewController: editVC), animated: true, completion: nil)
     }
+    
 }
 
 
