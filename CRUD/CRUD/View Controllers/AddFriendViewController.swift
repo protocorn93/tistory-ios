@@ -8,18 +8,26 @@
 
 import UIKit
 
-protocol FriendDataProtocol {
-    func save(_ friend: Friend)
-}
 
 class AddFriendViewController: UIViewController {
 
     @IBOutlet weak var textFieldTableView: UITableView!
     
-    var delegate:FriendDataProtocol?
-    
+    var friend: Friend?
     var nameTextField: UITextField!
     var phoneTextField: UITextField!
+    
+    var editFriend: ((Friend)->Bool)?
+    
+    init(friend: Friend?) {
+        self.friend = friend
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +51,25 @@ extension AddFriendViewController {
     }
     
     @objc func save(){
-        let name = nameTextField.text
-        let phone = phoneTextField.text
+        guard let name = nameTextField.text, let phone = phoneTextField.text, !name.isEmpty else { return }
         
-        delegate?.save(Friend(name: name!, phone: phone!))
+        let alert = UIAlertController(title: "중복", message: "이미 존재하는 그룹명입니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        if let friend = friend {
+            let previousName = friend.name
+            friend.name = name
+            friend.phone = phone
+            if !editFriend!(friend) {
+                present(alert, animated: true, completion: nil)
+                friend.name = previousName
+                return
+            }
+        }else {
+            if !editFriend!(Friend(name: name, phone: phone)) { // 이름이 존재
+                present(alert, animated: true, completion: nil)
+                return
+            }
+        }
         dismiss(animated: true, completion: nil)
     }
 }
@@ -61,12 +84,20 @@ extension AddFriendViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.reuseableIdentifier, for: indexPath) as! TextFieldCell
         if indexPath.row == 0 {
             cell.label.text = "Name:"
-            cell.textField.placeholder = "이름을 입력하세요."
+            if friend != nil {
+                cell.textField.text = friend?.name
+            }else{
+                cell.textField.placeholder = "이름을 입력하세요."
+            }
             nameTextField = cell.textField
             return cell
         }else if indexPath.row == 1 {
             cell.label.text = "Phone:"
-            cell.textField.placeholder = "-를 포함하여 입력해주세요."
+            if friend != nil  {
+                cell.textField.text = friend?.phone
+            }else{
+                cell.textField.placeholder = "-를 포함하여 입력해주세요."
+            }
             phoneTextField = cell.textField
             return cell
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Friend {
+class Friend: Codable{
     var name:String
     var phone:String
     

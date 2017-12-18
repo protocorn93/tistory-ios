@@ -24,6 +24,25 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
     
         friendsTableView.register(UINib(nibName: FriendCell.reuseableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCell.reuseableIdentifier)
+        
+        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        friendsTableView.reloadData()
+    }
+}
+
+// MARK: Additional method
+extension MainViewController {
+    func saveData(){
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(friends), forKey: "friends")
+        UserDefaults.standard.synchronize()
+    }
+    func loadData(){
+        if let data = UserDefaults.standard.object(forKey: "friends") as? Data {
+            friends = try! PropertyListDecoder().decode([Friend].self, from: data)
+        }
     }
 }
 
@@ -31,19 +50,25 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     @objc func add(){
-        let addVC = AddFriendViewController()
-        addVC.delegate = self
+        let addVC = AddFriendViewController(friend: nil)
+        
+        addVC.editFriend = { friend in
+            if self.friends.contains(where: {$0.name == friend.name}) {
+                return false
+            }
+            self.friends.append(friend)
+            self.saveData()
+            self.friendsTableView.reloadData()
+            return true
+        }
+        
         present(UINavigationController(rootViewController: addVC), animated: true, completion: nil)
+    }
+    
+    func edit(_ friend: Friend) {
     }
 }
 
-// MARK: FriendDataProtocol
-extension MainViewController: FriendDataProtocol {
-    func save(_ friend: Friend) {
-        friends.append(friend)
-        friendsTableView.reloadData()
-    }
-}
 
 // MARK: UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
@@ -63,6 +88,19 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let editVC = AddFriendViewController(friend: friends[indexPath.row])
+        editVC.editFriend = { friend in
+            let filteredFriend = self.friends.filter({$0.name == friend.name})
+            if filteredFriend.count > 1 { // 참조로 인한 본인의 것까지 검사를 하기 때문에 1 이상으로 해야한다.
+                return false
+            }
+            self.friends[indexPath.row] = friend
+            self.saveData()
+            self.friendsTableView.reloadData()
+            return true
+        }
+        present(UINavigationController(rootViewController: editVC), animated: true, completion: nil)
     }
 }
 
