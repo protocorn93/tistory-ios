@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddFriendViewController: UIViewController {
+class EditFriendViewController: UIViewController {
 
     @IBOutlet weak var textFieldTableView: UITableView!
     
@@ -45,7 +45,7 @@ class AddFriendViewController: UIViewController {
 }
 
 // MARK: Target-Action
-extension AddFriendViewController {
+extension EditFriendViewController {
     @objc func cancel(){
         dismiss(animated: true, completion: nil)
     }
@@ -75,7 +75,7 @@ extension AddFriendViewController {
 }
 
 // MARK: UITableViewDataSource
-extension AddFriendViewController: UITableViewDataSource {
+extension EditFriendViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -123,7 +123,7 @@ extension AddFriendViewController: UITableViewDataSource {
 }
 
 // MARK: UITableViewDelegate
-extension AddFriendViewController: UITableViewDelegate {
+extension EditFriendViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             tableView.deselectRow(at: indexPath, animated: true)

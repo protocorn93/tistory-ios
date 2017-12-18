@@ -16,8 +16,8 @@
 		3E684DF71FE3A29100208315 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E684DF51FE3A29100208315 /* FriendCell.xib */; };
 		3E684DFA1FE3A2AC00208315 /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E684DF91FE3A2AC00208315 /* NSObject+Identifier.swift */; };
 		3E684DFD1FE3A32D00208315 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E684DFC1FE3A32D00208315 /* Friend.swift */; };
-		3E684E001FE3A4AE00208315 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E684DFE1FE3A4AE00208315 /* AddFriendViewController.swift */; };
-		3E684E011FE3A4AE00208315 /* AddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E684DFF1FE3A4AE00208315 /* AddFriendViewController.xib */; };
+		3E684E001FE3A4AE00208315 /* EditFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E684DFE1FE3A4AE00208315 /* EditFriendViewController.swift */; };
+		3E684E011FE3A4AE00208315 /* EditFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E684DFF1FE3A4AE00208315 /* EditFriendViewController.xib */; };
 		3E684E041FE3A5C600208315 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E684E021FE3A5C600208315 /* TextFieldCell.swift */; };
 		3E684E051FE3A5C600208315 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E684E031FE3A5C600208315 /* TextFieldCell.xib */; };
 /* End PBXBuildFile section */
@@ -34,8 +34,8 @@
 		3E684DF51FE3A29100208315 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 		3E684DF91FE3A2AC00208315 /* NSObject+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
 		3E684DFC1FE3A32D00208315 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		3E684DFE1FE3A4AE00208315 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		3E684DFF1FE3A4AE00208315 /* AddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendViewController.xib; sourceTree = "<group>"; };
+		3E684DFE1FE3A4AE00208315 /* EditFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendViewController.swift; sourceTree = "<group>"; };
+		3E684DFF1FE3A4AE00208315 /* EditFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFriendViewController.xib; sourceTree = "<group>"; };
 		3E684E021FE3A5C600208315 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		3E684E031FE3A5C600208315 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,8 +87,8 @@
 			children = (
 				3E684DEF1FE38D4700208315 /* MainViewController.swift */,
 				3E684DF01FE38D4700208315 /* MainViewController.xib */,
-				3E684DFE1FE3A4AE00208315 /* AddFriendViewController.swift */,
-				3E684DFF1FE3A4AE00208315 /* AddFriendViewController.xib */,
+				3E684DFE1FE3A4AE00208315 /* EditFriendViewController.swift */,
+				3E684DFF1FE3A4AE00208315 /* EditFriendViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 				3E684DF21FE38D4700208315 /* MainViewController.xib in Resources */,
 				3E684DE41FE38CFE00208315 /* Assets.xcassets in Resources */,
 				3E684DF71FE3A29100208315 /* FriendCell.xib in Resources */,
-				3E684E011FE3A4AE00208315 /* AddFriendViewController.xib in Resources */,
+				3E684E011FE3A4AE00208315 /* EditFriendViewController.xib in Resources */,
 				3E684E051FE3A5C600208315 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E684E001FE3A4AE00208315 /* AddFriendViewController.swift in Sources */,
+				3E684E001FE3A4AE00208315 /* EditFriendViewController.swift in Sources */,
 				3E684DDD1FE38CFE00208315 /* AppDelegate.swift in Sources */,
 				3E684DF61FE3A29100208315 /* FriendCell.swift in Sources */,
 				3E684DFD1FE3A32D00208315 /* Friend.swift in Sources */,

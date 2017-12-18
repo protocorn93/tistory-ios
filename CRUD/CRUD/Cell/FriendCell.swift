@@ -21,6 +21,7 @@ class FriendCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         nameLabel.text = nil
         phoneLabel.text = nil
     }

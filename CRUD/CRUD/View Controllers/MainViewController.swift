@@ -61,7 +61,7 @@ extension MainViewController {
     }
     
     @objc func add(){
-        let addVC = AddFriendViewController(friend: nil)
+        let addVC = EditFriendViewController(friend: nil)
         
         addVC.editFriend = { friend in
             if self.friends.contains(where: {$0.name == friend.name}) {
@@ -74,9 +74,6 @@ extension MainViewController {
         }
         
         present(UINavigationController(rootViewController: addVC), animated: true, completion: nil)
-    }
-    
-    func edit(_ friend: Friend) {
     }
 }
 
@@ -100,7 +97,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let editVC = AddFriendViewController(friend: friends[indexPath.row])
+        let editVC = EditFriendViewController(friend: friends[indexPath.row])
         editVC.editFriend = { friend in
             let filteredFriend = self.friends.filter({$0.name == friend.name})
             if filteredFriend.count > 1 { // 참조로 인한 본인의 것까지 검사를 하기 때문에 1 이상으로 해야한다.
@@ -112,6 +109,12 @@ extension MainViewController: UITableViewDelegate {
             return true
         }
         present(UINavigationController(rootViewController: editVC), animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            NotificationCenter.default.post(name: Friend.didDelete, object: friends[indexPath.row])
+        }
     }
     
 }
