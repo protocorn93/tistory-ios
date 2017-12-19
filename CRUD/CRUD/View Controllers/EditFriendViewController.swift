@@ -32,7 +32,11 @@ class EditFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Add Friend"
+        if friend != nil {
+            title = "Edit Friend"
+        }else {
+            title = "Add Friend"
+        }
         
         textFieldTableView.delegate = self
         textFieldTableView.dataSource = self
