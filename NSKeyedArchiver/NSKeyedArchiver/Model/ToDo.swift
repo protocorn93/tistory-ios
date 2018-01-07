@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ToDo: NSObject, NSCoding {
+class ToDo: NSObject,  NSCoding {
+    
+    var title: String
+    var desc: String
+    
     init(title:String, description: String) {
         self.title = title
         self.desc = description
@@ -25,7 +29,5 @@ class ToDo: NSObject, NSCoding {
         
         self.init(title: title, description: desc)
     }
-    
-    var title: String
-    var desc: String
+
 }
