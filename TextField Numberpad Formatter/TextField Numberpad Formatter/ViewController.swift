@@ -11,10 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = nil
         textField.delegate = self        
+    }
+    @IBAction func btnPressed(_ sender: Any) {
+        label.text = textField.text
     }
 }
 
@@ -38,10 +43,14 @@ extension ViewController: UITextFieldDelegate {
                     textField.text = formattedString
                     return false
                 }
-            }else{ // 숫자가 아닐 때
+            }else{ // 숫자가 아닐 때먽
                 if string == "" { // 백스페이스일때
                     let lastIndex = beforeForemattedString.index(beforeForemattedString.endIndex, offsetBy: -1)
                     beforeForemattedString = String(beforeForemattedString[..<lastIndex])
+                    if let formattedNumber = formatter.number(from: beforeForemattedString), let formattedString = formatter.string(from: formattedNumber){
+                        textField.text = formattedString
+                        return false
+                    }
                 }else{ // 문자일 때
                     return false
                 }
@@ -52,38 +61,3 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
 }
-/*
-extension ViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
-        formatter.maximumFractionDigits = 1
-        
-        print("string : \(string)") // 현재 입력된 문자
-        print("groupingSeparator: \(formatter.groupingSeparator)")
-        
-        if let groupingSeparator = formatter.groupingSeparator {
-            if string == groupingSeparator {
-                return true
-            }
-            if let textWithoutGroupingSeparator = textField.text?.replacingOccurrences(of: groupingSeparator, with: "") {
-                print("textWithoutGroupingSeparator : \(textWithoutGroupingSeparator)")
-                var totalTextWithoutGroupingSeparators = textWithoutGroupingSeparator + string
-                if string == "" {
-                    totalTextWithoutGroupingSeparators.characters.removeLast()
-                }
-                if let numberWithoutGroupingSeparator = formatter.number(from: totalTextWithoutGroupingSeparators),
-                    let formattedText = formatter.string(from: numberWithoutGroupingSeparator) {
-
-                    textField.text = formattedText
-                    return false
-                }
-            }
-        }
-        return true
-    }
-}
-*/
-

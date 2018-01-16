@@ -41,16 +41,34 @@
                                     <constraint firstAttribute="trailing" secondItem="1P4-nn-RSx" secondAttribute="trailing" id="mfE-A8-hvY"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiY-ny-ddu">
+                                <rect key="frame" x="172" y="381" width="30" height="30"/>
+                                <state key="normal" title="입력"/>
+                                <connections>
+                                    <action selector="btnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CTG-SR-g2R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hB-uF-nh8">
+                                <rect key="frame" x="166" y="239.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZd-Qo-LMX" secondAttribute="trailing" constant="30" id="IY3-Ht-i9b"/>
+                            <constraint firstItem="3hB-uF-nh8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QAY-Et-mKH"/>
                             <constraint firstItem="BZd-Qo-LMX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a87-LW-d0t"/>
                             <constraint firstItem="BZd-Qo-LMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bB9-0x-Co1"/>
+                            <constraint firstItem="ZiY-ny-ddu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iVN-4W-1cQ"/>
+                            <constraint firstItem="ZiY-ny-ddu" firstAttribute="top" secondItem="BZd-Qo-LMX" secondAttribute="bottom" constant="24" id="jDk-8i-xPx"/>
+                            <constraint firstItem="BZd-Qo-LMX" firstAttribute="top" secondItem="3hB-uF-nh8" secondAttribute="bottom" constant="50.5" id="rwY-Zq-jTP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="label" destination="3hB-uF-nh8" id="AP3-bu-6dJ"/>
                         <outlet property="textField" destination="1P4-nn-RSx" id="LlN-2V-Vse"/>
                     </connections>
                 </viewController>
