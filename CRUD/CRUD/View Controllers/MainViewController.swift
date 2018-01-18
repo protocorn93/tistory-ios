@@ -39,7 +39,6 @@ class MainViewController: UIViewController {
 extension MainViewController {
     func saveData(){
         UserDefaults.standard.set(try? PropertyListEncoder().encode(friends), forKey: "friends")
-        UserDefaults.standard.synchronize()
     }
     func loadData(){
         if let data = UserDefaults.standard.object(forKey: "friends") as? Data {
