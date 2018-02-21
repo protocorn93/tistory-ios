@@ -40,7 +40,8 @@ class MainVCViewController: UIViewController{
     }()
    
     let slideMenuWidth:CGFloat = 150
-    var menuLeftConstraintsConstants: NSLayoutConstraint?
+    var menuLeftConstraints: NSLayoutConstraint?
+    var menuSlideWitdthConstraints: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +58,14 @@ extension MainVCViewController {
     func setupMenuView(){
         self.view.addSubview(menuView)
         guard let navbarHeight = self.navigationController?.navigationBar.frame.maxY else {return}
-        menuView.widthAnchor.constraint(equalToConstant: slideMenuWidth).isActive = true
+        
+        menuSlideWitdthConstraints =  menuView.widthAnchor.constraint(equalToConstant: slideMenuWidth)
+        menuSlideWitdthConstraints!.isActive = true
         menuView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: navbarHeight).isActive = true
         menuView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        menuLeftConstraintsConstants = menuView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -slideMenuWidth)
-        menuLeftConstraintsConstants!.isActive = true
+        menuLeftConstraints = menuView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -slideMenuWidth)
+        menuLeftConstraints!.isActive = true
         
         self.view.addSubview(mainView)
         mainView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: navbarHeight).isActive = true
@@ -72,11 +75,11 @@ extension MainVCViewController {
     }
     
     @objc func menuBtnTapped() {
-        if menuLeftConstraintsConstants?.constant == 0 {
-            menuLeftConstraintsConstants?.constant = -slideMenuWidth
+        if menuLeftConstraints?.constant == 0 {
+            menuLeftConstraints?.constant = -slideMenuWidth
             
         }else {
-            menuLeftConstraintsConstants?.constant = 0
+            menuLeftConstraints?.constant = 0
         }
         UIView.animate(withDuration: 0.4) {
             self.view.layoutIfNeeded()
@@ -89,6 +92,17 @@ extension MainVCViewController {
 extension MainVCViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        menuSlideWitdthConstraints?.constant = slideMenuWidth + 20
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        }) { (true) in
+            self.menuLeftConstraints?.constant = -self.menuSlideWitdthConstraints!.constant
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.layoutIfNeeded()
+                self.menuSlideWitdthConstraints?.constant = self.slideMenuWidth
+            })
+        }
     }
 }
 
