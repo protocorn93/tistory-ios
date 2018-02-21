@@ -8,12 +8,14 @@
 
 import UIKit
 
-class MainVCViewController: UIViewController{
+@IBDesignable class MainVCViewController: UIViewController{
+    
+    @IBInspectable var slideMenuWidth:CGFloat = 150
+    @IBInspectable var mainBackgroundColor: UIColor = .darkGray
     
     lazy var menuView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
         
         view.addSubview(self.menuTableView)
         self.menuTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -34,12 +36,11 @@ class MainVCViewController: UIViewController{
 
     lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = self.mainBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
    
-    let slideMenuWidth:CGFloat = 150
     var menuLeftConstraints: NSLayoutConstraint?
     var menuSlideWitdthConstraints: NSLayoutConstraint?
 
@@ -71,7 +72,7 @@ extension MainVCViewController {
         mainView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: navbarHeight).isActive = true
         mainView.leftAnchor.constraint(equalTo: self.menuView.rightAnchor).isActive = true
         mainView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        mainView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        mainView.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
     }
     
     @objc func menuBtnTapped() {
@@ -97,10 +98,13 @@ extension MainVCViewController: UITableViewDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }) { (true) in
-            self.menuLeftConstraints?.constant = -self.menuSlideWitdthConstraints!.constant
+            self.menuLeftConstraints?.constant = -self.slideMenuWidth - 20
+//            self.menuLeftConstraints?.constant = -self.slideMenuWidth // 2nd Method
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.layoutIfNeeded()
+//                self.menuSlideWitdthConstraints?.constant = self.slideMenuWidth // 2nd Method
                 self.menuSlideWitdthConstraints?.constant = self.slideMenuWidth
+                self.menuLeftConstraints?.constant = -self.slideMenuWidth
             })
         }
     }

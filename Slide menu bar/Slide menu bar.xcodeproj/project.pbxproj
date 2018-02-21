@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6BB650203DAB0500B592AB /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6BB64F203DAB0500B592AB /* Sample.storyboard */; };
 		3E7E3B80203D5385000ADF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3B7F203D5385000ADF85 /* AppDelegate.swift */; };
 		3E7E3B87203D5385000ADF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3B86203D5385000ADF85 /* Assets.xcassets */; };
 		3E7E3B8A203D5385000ADF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3B88203D5385000ADF85 /* LaunchScreen.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6BB64F203DAB0500B592AB /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
 		3E7E3B7C203D5385000ADF85 /* Slide menu bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slide menu bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3B7F203D5385000ADF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E7E3B86203D5385000ADF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				3E7E3B92203D53F6000ADF85 /* MainVCViewController.swift */,
 				3E7E3B93203D53F6000ADF85 /* MainVCViewController.xib */,
+				3E6BB64F203DAB0500B592AB /* Sample.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			files = (
 				3E7E3B8A203D5385000ADF85 /* LaunchScreen.storyboard in Resources */,
 				3E7E3B95203D53F6000ADF85 /* MainVCViewController.xib in Resources */,
+				3E6BB650203DAB0500B592AB /* Sample.storyboard in Resources */,
 				3E7E3B87203D5385000ADF85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +281,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 452DHHAC9T;
 				INFOPLIST_FILE = "Slide menu bar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Slide-menu-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 452DHHAC9T;
 				INFOPLIST_FILE = "Slide menu bar/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Slide-menu-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
