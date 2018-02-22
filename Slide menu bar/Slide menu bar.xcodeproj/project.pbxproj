@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E6BB650203DAB0500B592AB /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6BB64F203DAB0500B592AB /* Sample.storyboard */; };
+		3E6BB652203DC44100B592AB /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6BB651203DC44100B592AB /* SampleVC.swift */; };
 		3E7E3B80203D5385000ADF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E3B7F203D5385000ADF85 /* AppDelegate.swift */; };
 		3E7E3B87203D5385000ADF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3B86203D5385000ADF85 /* Assets.xcassets */; };
 		3E7E3B8A203D5385000ADF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E3B88203D5385000ADF85 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		3E6BB64F203DAB0500B592AB /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
+		3E6BB651203DC44100B592AB /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVC.swift; sourceTree = "<group>"; };
 		3E7E3B7C203D5385000ADF85 /* Slide menu bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slide menu bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7E3B7F203D5385000ADF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E7E3B86203D5385000ADF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				3E7E3B92203D53F6000ADF85 /* MainVCViewController.swift */,
 				3E7E3B93203D53F6000ADF85 /* MainVCViewController.xib */,
 				3E6BB64F203DAB0500B592AB /* Sample.storyboard */,
+				3E6BB651203DC44100B592AB /* SampleVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				3E7E3B94203D53F6000ADF85 /* MainVCViewController.swift in Sources */,
 				3E7E3B80203D5385000ADF85 /* AppDelegate.swift in Sources */,
+				3E6BB652203DC44100B592AB /* SampleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainVC View Controller-->
+        <!--SampleVC-->
         <scene sceneID="EoC-6W-F5z">
             <objects>
-                <viewController id="KZA-k2-1Yt" customClass="MainVCViewController" customModule="Slide_menu_bar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KZA-k2-1Yt" customClass="SampleVC" customModule="Slide_menu_bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhD-7n-NQ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                             <real key="value" value="100"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="mainBackgroundColor">
-                            <color key="value" red="0.38094075519999998" green="0.62519275939999996" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </viewController>
