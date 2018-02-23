@@ -37,6 +37,29 @@ class LoginVC: UIViewController {
         return separatorView_1
     }()
     
+    lazy var emailTextField: UITextField = {
+        let emailTextField = UITextField()
+        emailTextField.placeholder = "Input email"
+        emailTextField.borderStyle = .roundedRect
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        return emailTextField
+    }()
+    
+    lazy var separatorView_2: UIView = {
+        let separatorView_2 = UIView()
+        separatorView_2.backgroundColor = .darkGray
+        separatorView_2.translatesAutoresizingMaskIntoConstraints = false
+        return separatorView_2
+    }()
+    
+    lazy var passwordTextField: UITextField = {
+        let passwordTextField = UITextField()
+        passwordTextField.placeholder = "Input password"
+        passwordTextField.borderStyle = .roundedRect
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        return passwordTextField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentedControl.selectedSegmentIndex = 1
@@ -78,12 +101,9 @@ class LoginVC: UIViewController {
         separatorView_1.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
         separatorView_1.heightAnchor.constraint(equalToConstant: 1).isActive = true
         separatorView_1.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive = true
-        
-        let emailTextField = UITextField()
-        emailTextField.placeholder = "Input email"
-        emailTextField.borderStyle = .roundedRect
+
         containerView.addSubview(emailTextField)
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+
         // x, y, w, h
         emailTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
         emailTextField.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
@@ -92,9 +112,6 @@ class LoginVC: UIViewController {
         emailTextFieldTopConstraint!.isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        let separatorView_2 = UIView()
-        separatorView_2.backgroundColor = .darkGray
-        separatorView_2.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(separatorView_2)
         // x, y, w, h
         
@@ -103,11 +120,8 @@ class LoginVC: UIViewController {
         separatorView_2.heightAnchor.constraint(equalToConstant: 1).isActive = true
         separatorView_2.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
         
-        let passwordTextField = UITextField()
-        passwordTextField.placeholder = "Input password"
-        passwordTextField.borderStyle = .roundedRect
         containerView.addSubview(passwordTextField)
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+
         // x, y, w, h
         passwordTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
