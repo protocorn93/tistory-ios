@@ -10,8 +10,6 @@ import UIKit
 
 class MainVC: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
-    let cellId = "CellID"
-    
     var items:[String] = ["one", "two", "three", "four", "five"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +28,6 @@ class MainVC: UIViewController{
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
             self.items.remove(at: indexPath.item)
             self.collectionView.deleteItems(at: [indexPath])
-            self.collectionView.reloadData()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -48,7 +45,6 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.reusableIdentifier, for: indexPath) as! CollectionCell
         cell.text = items[indexPath.row]
-        
         cell.backgroundColor = .darkGray
         return cell
     }
