@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="Keyboard_hide_TextField" customModuleProvider="target">
             <connections>
+                <outlet property="inputViewBottomAnchor" destination="Qgo-Qo-uiF" id="8Ai-9i-HzA"/>
                 <outlet property="textField" destination="CMN-q4-Pja" id="vUJ-b3-KEX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,18 +22,53 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMN-q4-Pja">
-                    <rect key="frame" x="40" y="597" width="295" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-bm-Etg">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMN-q4-Pja">
+                            <rect key="frame" x="40" y="577" width="295" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dMI-EW-JJX">
+                            <rect key="frame" x="167.5" y="188.5" width="39" height="270"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-GB-y1j">
+                                    <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                    <state key="normal" title="Test1"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahG-wC-s1R">
+                                    <rect key="frame" x="0.0" y="80" width="39" height="30"/>
+                                    <state key="normal" title="Test2"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxC-PK-zeo">
+                                    <rect key="frame" x="0.0" y="160" width="39" height="30"/>
+                                    <state key="normal" title="Test3"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vts-X4-5fH">
+                                    <rect key="frame" x="0.0" y="240" width="39" height="30"/>
+                                    <state key="normal" title="Test4"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CMN-q4-Pja" secondAttribute="bottom" constant="40" id="0Os-jV-94X"/>
+                        <constraint firstItem="CMN-q4-Pja" firstAttribute="leading" secondItem="oeL-bm-Etg" secondAttribute="leading" constant="40" id="27X-aW-Hxq"/>
+                        <constraint firstItem="dMI-EW-JJX" firstAttribute="centerY" secondItem="oeL-bm-Etg" secondAttribute="centerY" id="4Wo-8d-0Dh"/>
+                        <constraint firstItem="dMI-EW-JJX" firstAttribute="centerX" secondItem="oeL-bm-Etg" secondAttribute="centerX" id="JFt-Yj-6ST"/>
+                        <constraint firstAttribute="trailing" secondItem="CMN-q4-Pja" secondAttribute="trailing" constant="40" id="jSV-lZ-QWq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CMN-q4-Pja" secondAttribute="bottom" constant="40" id="Iap-P8-9ci"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CMN-q4-Pja" secondAttribute="trailing" constant="40" id="PTY-LQ-x6C"/>
-                <constraint firstItem="CMN-q4-Pja" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="eAj-Iv-fuM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oeL-bm-Etg" secondAttribute="bottom" id="Qgo-Qo-uiF"/>
+                <constraint firstItem="oeL-bm-Etg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WJ9-50-3CG"/>
+                <constraint firstItem="oeL-bm-Etg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aLz-pZ-BhJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oeL-bm-Etg" secondAttribute="trailing" id="bYo-Mn-1co"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

@@ -10,6 +10,7 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var inputViewBottomAnchor: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,24 @@ extension MainVC: UITextFieldDelegate{
     
     @objc func keyboardWillHide(_ notification: Notification){
         print("Keyboard hide")
+        handleKeyboardIssue(notification: notification, isAppearing: false)
     }
     
     @objc func keyboardWillShow(_ notification: Notification){
         print("Keyboard show")
+        handleKeyboardIssue(notification: notification, isAppearing: true)
+    }
+    
+    fileprivate func handleKeyboardIssue(notification: Notification, isAppearing: Bool) {
+        guard let userInfo = notification.userInfo as? [String:Any] else {return}
+        guard let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {return}
+        guard let keyboardShowAnimateDuartion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {return}
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+        
+        let heightConstant = isAppearing ? keyboardHeight : 0
+        inputViewBottomAnchor.constant = heightConstant
+        UIView.animate(withDuration: keyboardShowAnimateDuartion.doubleValue) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
