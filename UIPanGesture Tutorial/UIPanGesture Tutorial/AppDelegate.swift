@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MediaPlayer
+import AVKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainVC()
-
+        let rootVC = MainVC()
+        NotificationCenter.default.addObserver(rootVC, selector: #selector(rootVC.volumeChanged(notification:)), name: Notification.Name("AVSystemController_SystemVolumeDidChangeNotification"), object: nil)
+        window?.rootViewController = rootVC
         return true
     }
 }
