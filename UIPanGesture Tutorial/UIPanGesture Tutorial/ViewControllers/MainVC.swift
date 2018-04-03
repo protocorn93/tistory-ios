@@ -20,7 +20,7 @@ class MainVC: UIViewController {
     }()
     
     var volumeView:MPVolumeView = {
-        let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        let volumeView = MPVolumeView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         volumeView.isHidden = true
         return volumeView
     }()
@@ -56,19 +56,16 @@ class MainVC: UIViewController {
             isDragging = true
         }else if gesture.state == .changed {
             let velocity = gesture.velocity(in: self.view)
-            guard let volumeView = volumeView.subviews.first as? UISlider else {return}
-            
             if velocity.y > 0 {
-                sideVolumeHeightConstraint.constant -= 1
+                NotificationCenter.default.post(name: Notification.Name("AVSystemController_SystemVolumeDidChangeNotification"), object: true)
             }else if velocity.y < 0 {
-                sideVolumeHeightConstraint.constant += 1
+                NotificationCenter.default.post(name: Notification.Name("AVSystemController_SystemVolumeDidChangeNotification"), object: false)
             }
             if sideVolumeHeightConstraint.constant >= self.view.frame.height {
                 sideVolumeHeightConstraint.constant = self.view.frame.height
             }else if sideVolumeHeightConstraint.constant <= 0 {
                 sideVolumeHeightConstraint.constant = 0
             }
-            volumeView.value = Float(sideVolumeHeightConstraint.constant / self.view.frame.height)
         }else if gesture.state == .ended {
             isDragging = false
         }
@@ -81,9 +78,19 @@ class MainVC: UIViewController {
     }
     
     @objc func volumeChanged(notification: NSNotification) {
-        let volume = notification.userInfo!["AVSystemController_AudioVolumeNotificationParameter"] as! Float
-        if isDragging == false{
-            sideVolumeHeightConstraint.constant = CGFloat(volume) * self.view.frame.height
+        guard let volumeView = self.volumeView.subviews.first as? UISlider else {return}
+        if let obj = notification.object as? Bool {
+            if obj {
+                self.sideVolumeHeightConstraint.constant -= 3
+            }else {
+                self.sideVolumeHeightConstraint.constant += 3
+            }
+            volumeView.value = Float(self.sideVolumeHeightConstraint.constant / self.view.frame.height)
+        }else {
+            let volume = notification.userInfo!["AVSystemController_AudioVolumeNotificationParameter"] as! Float
+            if isDragging == false {
+                self.sideVolumeHeightConstraint.constant = CGFloat(volume) * self.view.frame.height
+            }
         }
     }
 }
