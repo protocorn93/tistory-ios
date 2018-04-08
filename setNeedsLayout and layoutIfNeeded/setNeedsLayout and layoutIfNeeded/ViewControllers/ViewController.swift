@@ -8,15 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CustomView:UIView {
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        print("layoutIfNeeded")
+    }
     
-    lazy var targetView: UIView = {
+    override func setNeedsLayout() {
+        super.setNeedsLayout()
+        print("setNeedsLayout")
+    }
+}
+
+class ViewController: UIViewController {
+   
+    var containerView: CustomView = {
+       let view = CustomView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    var targetView:UIView = {
         let view = UIView()
         view.backgroundColor = .blue
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     var targetViewHeightConstraintLayout: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -24,31 +43,43 @@ class ViewController: UIViewController {
         setupView()
         setupNavBarItem()
     }
-    
     fileprivate func setupNavBarItem(){
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Animate", style: .plain, target: self, action: #selector(handleAnimate))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "height", style: .plain, target: self, action: #selector(handleHeightValue))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "alpha", style: .plain, target: self, action: #selector(handleAlphaValue))
     }
     
     fileprivate func setupView(){
-        self.view.addSubview(targetView)
-        targetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        targetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        targetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        targetViewHeightConstraintLayout = targetView.heightAnchor.constraint(equalToConstant: 30)
+        self.view.addSubview(containerView)
+        containerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        view.addSubview(targetView)
+        targetView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        targetView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        targetView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        targetViewHeightConstraintLayout = targetView.heightAnchor.constraint(equalToConstant: 150)
         targetViewHeightConstraintLayout.isActive = true
     }
-    @objc fileprivate func handleAnimate(){
-        if targetViewHeightConstraintLayout.constant == 30 {
-            targetViewHeightConstraintLayout.constant = 200
-        }else if targetViewHeightConstraintLayout.constant == 200 {
-            targetViewHeightConstraintLayout.constant = 30
+    @objc fileprivate func handleAlphaValue(){
+        UIView.animate(withDuration: 1) {
+            if self.targetView.alpha == 1 {
+                self.targetView.alpha = 0.5
+            }else if self.targetView.alpha == 0.5 {
+                self.targetView.alpha = 1
+            }
         }
-
-        UIView.animate(withDuration: 2) {
-            <#code#>
+    }
+    
+    @objc fileprivate func handleHeightValue(){
+        if targetViewHeightConstraintLayout.constant == 20 {
+            targetViewHeightConstraintLayout.constant = 150
+        }else if targetViewHeightConstraintLayout.constant == 150 {
+            targetViewHeightConstraintLayout.constant = 20
         }
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
-        }, completion: nil)
+        }
     }
 }
