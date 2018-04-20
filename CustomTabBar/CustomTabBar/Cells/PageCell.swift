@@ -1,38 +1,28 @@
 //
-//  CustomCell.swift
+//  PageCell.swift
 //  CustomTabBar
 //
-//  Created by 이동건 on 2018. 4. 18..
+//  Created by 이동건 on 2018. 4. 20..
 //  Copyright © 2018년 이동건. All rights reserved.
 //
 
 import UIKit
 
-class CustomCell: UICollectionViewCell {
-    
+class PageCell: UICollectionViewCell {
+
     var label: UILabel = {
         let label = UILabel()
-        label.text = "Tab"
+        label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    override var isHighlighted: Bool {
-        didSet{
-            self.label.textColor = isHighlighted ? .black : .lightGray
-        }
-    }
-    override var isSelected: Bool {
-        didSet{
-            self.label.textColor = isSelected ? .black : .lightGray
-        }
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         self.addSubview(label)
+        self.backgroundColor = .gray
         label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
