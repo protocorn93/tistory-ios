@@ -48,7 +48,7 @@ extension MainViewController {
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CollectionCell.reuseIdentifier, for: indexPath) as! CollectionCell
             cell.activityCollectionView.isHidden = false
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 cell.activityCollectionView.alpha = 1
             }, completion: nil)
             return cell
@@ -70,7 +70,7 @@ extension MainViewController {
                 UIView.animate(withDuration: 0.3, animations: {
                     cell.activityCollectionView.alpha = 0
                 }) { (_) in
-                    cell.activityCollectionView.isHidden = false
+                    cell.activityCollectionView.isHidden = true
                     tableView.reloadSections(sections, with: .none)
                 }
             }else{ // Menu Should down
