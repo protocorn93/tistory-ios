@@ -28,7 +28,6 @@ class MainVC: UIViewController, CustomMenuBarDelegate{
         setupCustomTabBar()
         setupPageCollectionView()
     }
-    
     //MARK: Setup view
     func setupCustomTabBar(){
         self.view.addSubview(customMenuBar)
