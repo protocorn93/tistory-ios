@@ -9,10 +9,20 @@
 import UIKit
 
 class ActivityCell: UICollectionViewCell {
-
+    
+    var activityLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textColor = .black
+        label.text = "Sample"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.addSubview(activityLabel)
+        self.backgroundColor = .lightGray
+        activityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        activityLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
-
 }
