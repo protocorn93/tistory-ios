@@ -11,15 +11,18 @@ import JTAppleCalendar
 
 class CustomCell: JTAppleCell {
     
-    var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.themeOrange
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = true
         return view
     }()
     
     var dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor.themeLightGreen
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,16 +31,17 @@ class CustomCell: JTAppleCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.addSubview(containerView)
-        containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.backgroundColor = UIColor.themeDark
+        containerView.isHidden = true
+        containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        containerView.addSubview(dateLabel)
-        dateLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        dateLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        self.addSubview(dateLabel)
+        dateLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        dateLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

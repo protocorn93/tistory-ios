@@ -14,6 +14,7 @@
 		3E38B8E8208B828A001EF24F /* NSObject + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38B8E7208B828A001EF24F /* NSObject + reuseIdentifier.swift */; };
 		3E38B8EF208B979F001EF24F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38B8ED208B979F001EF24F /* MainVC.swift */; };
 		3E38B8F0208B979F001EF24F /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E38B8EE208B979F001EF24F /* MainVC.xib */; };
+		3E645EFC208C3CD100B387B6 /* UIColor + themeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E645EFB208C3CD100B387B6 /* UIColor + themeColor.swift */; };
 		6402E95F96714E5947A32DD8 /* Pods_ExpandingCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37E13E907D4494B8ED0333 /* Pods_ExpandingCalendar.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		3E38B8E7208B828A001EF24F /* NSObject + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + reuseIdentifier.swift"; sourceTree = "<group>"; };
 		3E38B8ED208B979F001EF24F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		3E38B8EE208B979F001EF24F /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		3E645EFB208C3CD100B387B6 /* UIColor + themeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + themeColor.swift"; sourceTree = "<group>"; };
 		A2514B8F3DC99D4739030AF9 /* Pods-ExpandingCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandingCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandingCalendar/Pods-ExpandingCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		DE7CA8A97C419273EE9EE29F /* Pods-ExpandingCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandingCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandingCalendar/Pods-ExpandingCalendar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3E38B8E7208B828A001EF24F /* NSObject + reuseIdentifier.swift */,
+				3E645EFB208C3CD100B387B6 /* UIColor + themeColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				3E38B8E5208B8105001EF24F /* CustomCell.swift in Sources */,
 				3E38B8E8208B828A001EF24F /* NSObject + reuseIdentifier.swift in Sources */,
 				3E38B8D1208B7F03001EF24F /* AppDelegate.swift in Sources */,
+				3E645EFC208C3CD100B387B6 /* UIColor + themeColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
