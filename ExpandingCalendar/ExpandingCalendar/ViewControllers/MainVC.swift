@@ -72,7 +72,7 @@ extension MainVC {
         dropCalendarButton.isSelected = !dropCalendarButton.isSelected
         guard let date = customCalendarView.capturedDate.monthDates.first?.date else {return}
         if dropCalendarButton.isSelected { // open
-            customCalendarView.maximizedCalendarView.scrollToDate(date)
+            self.customCalendarView.maximizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
             customCalendarViewHeightConstraint.constant = 410
             customCalendarView.maximizedCalendarHeightAnchor.constant = 320
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -84,14 +84,14 @@ extension MainVC {
             customCalendarView.maximizedCalendarView.deselectAllDates()
             customCalendarView.maximizedCalendarView.selectDates(customCalendarView.minimizedCalendarView.selectedDates)
         }else{                              // close
-            customCalendarView.minimizedCalendarView.scrollToDate(date)
+            self.customCalendarView.minimizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil
+            )
             customCalendarViewHeightConstraint.constant = 150
             customCalendarView.maximizedCalendarHeightAnchor.constant = 0
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
                 self.customCalendarView.minimizedCalendarView.alpha = 1
                 self.customCalendarView.maximizedCalendarView.alpha = 0
-                self.customCalendarView.minimizedCalendarView.scrollToDate(Date())
             }, completion: nil)
             self.selectedDates = customCalendarView.maximizedCalendarView.selectedDates
             customCalendarView.minimizedCalendarView.deselectAllDates()

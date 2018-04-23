@@ -39,7 +39,7 @@ class CustomCalendarView: UIView {
             self.formatter.dateFormat = "MMMM"
             self.monthLabel.text = self.formatter.string(from: date)
         }
-        maximizedCalendarView.scrollToDate(Date())
+        maximizedCalendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
         maximizedCalendarView.selectDates([Date()])
         maximizedCalendarView.minimumLineSpacing = 0
         maximizedCalendarView.minimumInteritemSpacing = 0
@@ -60,6 +60,7 @@ class CustomCalendarView: UIView {
             self.monthLabel.text = self.formatter.string(from: date)
         }
         minimizedCalendarView.scrollToDate(Date())
+        minimizedCalendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
         minimizedCalendarView.selectDates([Date()])
         minimizedCalendarView.minimumLineSpacing = 0
         minimizedCalendarView.minimumInteritemSpacing = 0
