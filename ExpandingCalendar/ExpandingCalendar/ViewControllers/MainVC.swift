@@ -80,6 +80,9 @@ extension MainVC {
                 self.customCalendarView.minimizedCalendarView.alpha = 0
                 self.customCalendarView.maximizedCalendarView.alpha = 1
             }, completion: nil)
+            self.selectedDates = customCalendarView.minimizedCalendarView.selectedDates
+            customCalendarView.maximizedCalendarView.deselectAllDates()
+            customCalendarView.maximizedCalendarView.selectDates(customCalendarView.minimizedCalendarView.selectedDates)
         }else{                              // close
             customCalendarView.minimizedCalendarView.scrollToDate(date)
             customCalendarViewHeightConstraint.constant = 150
@@ -88,7 +91,11 @@ extension MainVC {
                 self.view.layoutIfNeeded()
                 self.customCalendarView.minimizedCalendarView.alpha = 1
                 self.customCalendarView.maximizedCalendarView.alpha = 0
+                self.customCalendarView.minimizedCalendarView.scrollToDate(Date())
             }, completion: nil)
+            self.selectedDates = customCalendarView.maximizedCalendarView.selectedDates
+            customCalendarView.minimizedCalendarView.deselectAllDates()
+            customCalendarView.minimizedCalendarView.selectDates(customCalendarView.maximizedCalendarView.selectedDates)
         }
     }
 }
