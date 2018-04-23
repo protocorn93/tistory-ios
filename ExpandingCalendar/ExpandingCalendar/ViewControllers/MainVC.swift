@@ -12,6 +12,7 @@ import JTAppleCalendar
 class MainVC: UIViewController {
     //MARK: Properties
     var customCalendarView = CustomCalendarView.initFromNib()
+    var selectedDates:[Date] = []
     var customCalendarViewHeightConstraint: NSLayoutConstraint!
     //MARK: Outlets
     var dropCalendarButton: UIButton = {
@@ -65,7 +66,7 @@ class MainVC: UIViewController {
     }
     
 }
-//MARK:- Handle Drop Calendar
+//MARK:- Handle Drop Calenda
 extension MainVC {
     @objc func handleDropCalendarButton(){
         dropCalendarButton.isSelected = !dropCalendarButton.isSelected

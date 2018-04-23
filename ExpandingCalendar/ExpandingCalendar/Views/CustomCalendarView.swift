@@ -16,8 +16,8 @@ class CustomCalendarView: UIView {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var maximizedCalendarView: JTAppleCalendarView!
     @IBOutlet weak var minimizedCalendarView: JTAppleCalendarView!
-    var capturedDate:DateSegmentInfo!
     //MARK: Properties
+    var capturedDate:DateSegmentInfo!
     var formatter = DateFormatter()
     //MARK: Life cycle
     override func awakeFromNib() {
@@ -40,6 +40,7 @@ class CustomCalendarView: UIView {
             self.monthLabel.text = self.formatter.string(from: date)
         }
         maximizedCalendarView.scrollToDate(Date())
+        maximizedCalendarView.selectDates([Date()])
         maximizedCalendarView.minimumLineSpacing = 0
         maximizedCalendarView.minimumInteritemSpacing = 0
         maximizedCalendarView.allowsMultipleSelection = true
@@ -59,6 +60,7 @@ class CustomCalendarView: UIView {
             self.monthLabel.text = self.formatter.string(from: date)
         }
         minimizedCalendarView.scrollToDate(Date())
+        minimizedCalendarView.selectDates([Date()])
         minimizedCalendarView.minimumLineSpacing = 0
         minimizedCalendarView.minimumInteritemSpacing = 0
         minimizedCalendarView.allowsMultipleSelection = true
