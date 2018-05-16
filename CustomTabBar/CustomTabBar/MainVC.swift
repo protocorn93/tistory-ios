@@ -40,7 +40,7 @@ class MainVC: UIViewController, CustomMenuBarDelegate{
         customMenuBar.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
-    func customMenuBar(to index: Int) {
+    func customMenuBar(scrollTo index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         self.pageCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }

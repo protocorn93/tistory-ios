@@ -70,9 +70,10 @@ class MainVC: UIViewController {
 extension MainVC {
     @objc func handleDropCalendarButton(){
         dropCalendarButton.isSelected = !dropCalendarButton.isSelected
-        guard let date = customCalendarView.capturedDate.monthDates.first?.date else {return}
         if dropCalendarButton.isSelected { // open
-            self.customCalendarView.maximizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
+            if let date = customCalendarView.minimizedCalendarView.selectedDates.last {
+                self.customCalendarView.maximizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
+            }
             customCalendarViewHeightConstraint.constant = 410
             customCalendarView.maximizedCalendarHeightAnchor.constant = 320
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -84,8 +85,9 @@ extension MainVC {
             customCalendarView.maximizedCalendarView.deselectAllDates()
             customCalendarView.maximizedCalendarView.selectDates(customCalendarView.minimizedCalendarView.selectedDates)
         }else{                              // close
-            self.customCalendarView.minimizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil
-            )
+            if let date = customCalendarView.maximizedCalendarView.selectedDates.last {
+                self.customCalendarView.minimizedCalendarView.scrollToDate(date, triggerScrollToDateDelegate: true, animateScroll: false, preferredScrollPosition: nil, extraAddedOffset: 0, completionHandler: nil)
+            }
             customCalendarViewHeightConstraint.constant = 150
             customCalendarView.maximizedCalendarHeightAnchor.constant = 0
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {

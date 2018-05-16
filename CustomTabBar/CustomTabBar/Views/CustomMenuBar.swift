@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CustomMenuBarDelegate: class {
-    func customMenuBar(to index: Int)
+    func customMenuBar(scrollTo index: Int)
 }
 
 class CustomMenuBar: UIView {
@@ -92,7 +92,7 @@ extension CustomMenuBar: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.customMenuBar(to: indexPath.row)
+        delegate?.customMenuBar(scrollTo: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

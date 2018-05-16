@@ -19,14 +19,9 @@ class CustomCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    override var isHighlighted: Bool {
-        didSet{
-            self.label.textColor = isHighlighted ? .black : .lightGray
-        }
-    }
     override var isSelected: Bool {
         didSet{
+            print("Changed")
             self.label.textColor = isSelected ? .black : .lightGray
         }
     }
