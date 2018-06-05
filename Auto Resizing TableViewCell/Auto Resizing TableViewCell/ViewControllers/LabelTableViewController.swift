@@ -10,7 +10,13 @@ import UIKit
 
 class LabelTableViewController: UITableViewController {
     
-    let dataForTableView = [("I have not failed. I’ve just found 10,000 ways that won’t work.","Thomas A. Edison"), ("A man is but the product of his thoughts. What he thinks, he becomes.","Mahatma Gandhi"), ("Amateurs sit and wait for inspiration, the rest of us just get up and go to work."," Stephen King"), ("Wisdom is not a product of schooling but of the lifelong attempt to acquire it.","Albert Einstein"),("Finish each day and be done with it. You have done what you could. Some blunders and absurdities no doubt crept in; forget them as soon as you can. Tomorrow is a new day. You shall begin it serenely and with too high a spirit to be encumbered with your old nonsense.","Ralph Waldo Emerson")]
+    let dataForTableView = [
+        ("I have not failed. I’ve just found 10,000 ways that won’t work.","Thomas A. Edison"),
+        ("A man is but the product of his thoughts. What he thinks, he becomes.","Mahatma Gandhi"),
+        ("Amateurs sit and wait for inspiration, the rest of us just get up and go to work."," Stephen King"),
+        ("Wisdom is not a product of schooling but of the lifelong attempt to acquire it.","Albert Einstein"),
+        ("Finish each day and be done with it. You have done what you could. Some blunders and absurdities no doubt crept in; forget them as soon as you can. Tomorrow is a new day. You shall begin it serenely and with too high a spirit to be encumbered with your old nonsense.","Ralph Waldo Emerson")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
