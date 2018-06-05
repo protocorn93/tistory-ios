@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		3E57587520C613C50076EC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57587420C613C50076EC01 /* AppDelegate.swift */; };
-		3E57587720C613C50076EC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57587620C613C50076EC01 /* ViewController.swift */; };
 		3E57587A20C613C50076EC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E57587820C613C50076EC01 /* Main.storyboard */; };
 		3E57587C20C613C60076EC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E57587B20C613C60076EC01 /* Assets.xcassets */; };
 		3E57587F20C613C60076EC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E57587D20C613C60076EC01 /* LaunchScreen.storyboard */; };
-		3E57588720C614200076EC01 /* ResizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57588620C614200076EC01 /* ResizableCell.swift */; };
+		3E57588B20C62F500076EC01 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57588A20C62F500076EC01 /* MainTableViewController.swift */; };
+		3E57588E20C630EB0076EC01 /* LabelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57588C20C630EB0076EC01 /* LabelTableViewController.swift */; };
+		3E57588F20C630EB0076EC01 /* LabelTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E57588D20C630EB0076EC01 /* LabelTableViewController.xib */; };
+		3E57589420C631930076EC01 /* ResizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57589220C631930076EC01 /* ResizableCell.swift */; };
+		3E57589520C631930076EC01 /* ResizableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E57589320C631930076EC01 /* ResizableCell.xib */; };
+		3E57589820C634220076EC01 /* NSObject + reusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57589720C634220076EC01 /* NSObject + reusableIdentifier.swift */; };
+		3E57589B20C635B00076EC01 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57589920C635B00076EC01 /* ImageTableViewController.swift */; };
+		3E57589C20C635B00076EC01 /* ImageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E57589A20C635B00076EC01 /* ImageTableViewController.xib */; };
+		3E57589F20C652920076EC01 /* ImageResizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57589D20C652920076EC01 /* ImageResizableCell.swift */; };
+		3E5758A020C652920076EC01 /* ImageResizableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E57589E20C652920076EC01 /* ImageResizableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E57587120C613C50076EC01 /* Auto Resizing TableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Resizing TableViewCell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E57587420C613C50076EC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E57587620C613C50076EC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E57587920C613C50076EC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E57587B20C613C60076EC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E57587E20C613C60076EC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E57588020C613C60076EC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E57588620C614200076EC01 /* ResizableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCell.swift; sourceTree = "<group>"; };
+		3E57588A20C62F500076EC01 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		3E57588C20C630EB0076EC01 /* LabelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewController.swift; sourceTree = "<group>"; };
+		3E57588D20C630EB0076EC01 /* LabelTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewController.xib; sourceTree = "<group>"; };
+		3E57589220C631930076EC01 /* ResizableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCell.swift; sourceTree = "<group>"; };
+		3E57589320C631930076EC01 /* ResizableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResizableCell.xib; sourceTree = "<group>"; };
+		3E57589720C634220076EC01 /* NSObject + reusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + reusableIdentifier.swift"; sourceTree = "<group>"; };
+		3E57589920C635B00076EC01 /* ImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
+		3E57589A20C635B00076EC01 /* ImageTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewController.xib; sourceTree = "<group>"; };
+		3E57589D20C652920076EC01 /* ImageResizableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizableCell.swift; sourceTree = "<group>"; };
+		3E57589E20C652920076EC01 /* ImageResizableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageResizableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,47 @@
 		3E57587320C613C50076EC01 /* Auto Resizing TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				3E57589620C634130076EC01 /* Extension */,
+				3E57588920C62F330076EC01 /* Cells */,
+				3E57588820C62F1F0076EC01 /* ViewControllers */,
 				3E57587420C613C50076EC01 /* AppDelegate.swift */,
-				3E57587620C613C50076EC01 /* ViewController.swift */,
 				3E57587820C613C50076EC01 /* Main.storyboard */,
 				3E57587B20C613C60076EC01 /* Assets.xcassets */,
 				3E57587D20C613C60076EC01 /* LaunchScreen.storyboard */,
 				3E57588020C613C60076EC01 /* Info.plist */,
-				3E57588620C614200076EC01 /* ResizableCell.swift */,
 			);
 			path = "Auto Resizing TableViewCell";
+			sourceTree = "<group>";
+		};
+		3E57588820C62F1F0076EC01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E57588A20C62F500076EC01 /* MainTableViewController.swift */,
+				3E57588C20C630EB0076EC01 /* LabelTableViewController.swift */,
+				3E57588D20C630EB0076EC01 /* LabelTableViewController.xib */,
+				3E57589920C635B00076EC01 /* ImageTableViewController.swift */,
+				3E57589A20C635B00076EC01 /* ImageTableViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E57588920C62F330076EC01 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E57589220C631930076EC01 /* ResizableCell.swift */,
+				3E57589320C631930076EC01 /* ResizableCell.xib */,
+				3E57589D20C652920076EC01 /* ImageResizableCell.swift */,
+				3E57589E20C652920076EC01 /* ImageResizableCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3E57589620C634130076EC01 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3E57589720C634220076EC01 /* NSObject + reusableIdentifier.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +173,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5758A020C652920076EC01 /* ImageResizableCell.xib in Resources */,
+				3E57588F20C630EB0076EC01 /* LabelTableViewController.xib in Resources */,
 				3E57587F20C613C60076EC01 /* LaunchScreen.storyboard in Resources */,
+				3E57589520C631930076EC01 /* ResizableCell.xib in Resources */,
 				3E57587C20C613C60076EC01 /* Assets.xcassets in Resources */,
 				3E57587A20C613C50076EC01 /* Main.storyboard in Resources */,
+				3E57589C20C635B00076EC01 /* ImageTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E57587720C613C50076EC01 /* ViewController.swift in Sources */,
+				3E57588E20C630EB0076EC01 /* LabelTableViewController.swift in Sources */,
+				3E57589B20C635B00076EC01 /* ImageTableViewController.swift in Sources */,
+				3E57588B20C62F500076EC01 /* MainTableViewController.swift in Sources */,
 				3E57587520C613C50076EC01 /* AppDelegate.swift in Sources */,
-				3E57588720C614200076EC01 /* ResizableCell.swift in Sources */,
+				3E57589F20C652920076EC01 /* ImageResizableCell.swift in Sources */,
+				3E57589420C631930076EC01 /* ResizableCell.swift in Sources */,
+				3E57589820C634220076EC01 /* NSObject + reusableIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
