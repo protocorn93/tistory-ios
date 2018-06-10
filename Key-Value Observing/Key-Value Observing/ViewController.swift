@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     var button: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Button", for: .normal)
+        button.setTitle("Button", for: UIControl.State.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -32,11 +32,12 @@ class ViewController: UIViewController {
     }
     
     func setupObserver(){
-        let dateObservation = configurationManager.configuration.observe(\.updatedAt, options: [.new]) { (observed, changed) in
-            self.label.text = self.configurationManager.updatedAt
+        let dateObservation = configurationManager.configuration.observe(\.updatedAt, options: [.initial, .new]) {[weak self] (observed, changed) in
+            self?.label.text = self?.configurationManager.dateFormatter.string(from: changed.newValue!)
         }
         observations.append(dateObservation)
     }
+    
     func setupViews(){
         self.view.addSubview(label)
         label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
         self.view.addSubview(button)
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30).isActive = true
-        button.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonDidTapped), for: UIControl.Event.touchUpInside)
     }
     
     @objc func buttonDidTapped(){

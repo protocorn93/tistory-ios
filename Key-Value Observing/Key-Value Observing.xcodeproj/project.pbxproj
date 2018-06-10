@@ -58,11 +58,11 @@
 			children = (
 				3E9E2D4320AC623A006D8D77 /* AppDelegate.swift */,
 				3E9E2D4520AC623A006D8D77 /* ViewController.swift */,
+				3EC2A3A620CC09D9003657C0 /* Configuration.swift */,
 				3E9E2D4720AC623A006D8D77 /* Main.storyboard */,
 				3E9E2D4A20AC623B006D8D77 /* Assets.xcassets */,
 				3E9E2D4C20AC623B006D8D77 /* LaunchScreen.storyboard */,
 				3E9E2D4F20AC623B006D8D77 /* Info.plist */,
-				3EC2A3A620CC09D9003657C0 /* Configuration.swift */,
 			);
 			path = "Key-Value Observing";
 			sourceTree = "<group>";
@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					3E9E2D3F20AC623A006D8D77 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -293,7 +294,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Key-Value-Observing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -311,7 +312,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Key-Value-Observing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

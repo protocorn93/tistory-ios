@@ -13,10 +13,9 @@ import Foundation
     dynamic var updatedAt = Date()
 }
 
-
 class ConfigurationManager:NSObject {
     var configuration: Configuration
-    lazy private var dateFormatter: DateFormatter = {
+    lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
         return dateFormatter
