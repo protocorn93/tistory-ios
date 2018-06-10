@@ -9,8 +9,13 @@
 import Foundation
 
 @objcMembers class Configuration: NSObject {
-    dynamic var createdAt = Date()
-    dynamic var updatedAt = Date()
+    dynamic var createdAt:Date
+    dynamic var updatedAt:Date
+    
+    init(createdAt: Date, updatedAt: Date) {
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
 }
 
 class ConfigurationManager:NSObject {

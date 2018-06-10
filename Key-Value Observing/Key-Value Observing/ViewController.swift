@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var observations:[NSKeyValueObservation] = []
-    let configurationManager = ConfigurationManager(withConfiguration: Configuration())
+    let configurationManager = ConfigurationManager(withConfiguration: Configuration(createdAt: Date(), updatedAt: Date()))
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
