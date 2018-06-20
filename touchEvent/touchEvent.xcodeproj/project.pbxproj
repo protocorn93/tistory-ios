@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E8D31C020DA121500F35CDB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D31BF20DA121400F35CDB /* SecondViewController.swift */; };
 		3E8EABC620D7AB1A00C99646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EABC520D7AB1A00C99646 /* AppDelegate.swift */; };
 		3E8EABC820D7AB1A00C99646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8EABC720D7AB1A00C99646 /* ViewController.swift */; };
 		3E8EABCB20D7AB1B00C99646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8EABC920D7AB1B00C99646 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E53D3CA20DA91E300642BBF /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3E8D31BF20DA121400F35CDB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3E8EABC220D7AB1A00C99646 /* touchEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touchEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8EABC520D7AB1A00C99646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E8EABC720D7AB1A00C99646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +59,12 @@
 			children = (
 				3E8EABC520D7AB1A00C99646 /* AppDelegate.swift */,
 				3E8EABC720D7AB1A00C99646 /* ViewController.swift */,
+				3E53D3CA20DA91E300642BBF /* MyPlayground.playground */,
 				3E8EABC920D7AB1B00C99646 /* Main.storyboard */,
 				3E8EABCC20D7AB1C00C99646 /* Assets.xcassets */,
 				3E8EABCE20D7AB1C00C99646 /* LaunchScreen.storyboard */,
 				3E8EABD120D7AB1C00C99646 /* Info.plist */,
+				3E8D31BF20DA121400F35CDB /* SecondViewController.swift */,
 			);
 			path = touchEvent;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8D31C020DA121500F35CDB /* SecondViewController.swift in Sources */,
 				3E8EABC820D7AB1A00C99646 /* ViewController.swift in Sources */,
 				3E8EABC620D7AB1A00C99646 /* AppDelegate.swift in Sources */,
 			);

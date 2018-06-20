@@ -8,29 +8,98 @@
 
 import UIKit
 
+class CustomView: UIView {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("========================== Began")
+        print("Event Object : \(Unmanaged.passUnretained(event!).toOpaque())")
+        for (index, touch) in touches.enumerated() {
+            print("\(index)'s, UITouch Object : \(Unmanaged.passUnretained(touch).toOpaque())")
+        }
+    }
+}
+
+class CustomButton: UIButton {
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print("UIRESPONDER : Button Touch Began")
+//    }
+//
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print("UIRESPONDER : Button Touch Ended")
+//    }
+    
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+        super.sendAction(action, to: target, for: event)
+        event?.touches(for: self)?.forEach({
+            switch $0.phase {
+            case .began:
+                print("Began")
+            case .ended :
+                print("Ended")
+            default:
+                print("Default")
+            }
+        })
+    }
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var button: CustomButton! {
+        didSet{
+            button.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
+        }
+    }
+    @IBOutlet weak var skyBlueView: CustomView!
     var previousTouch:UITouch?
     var currentTouch:UITouch?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.isMultipleTouchEnabled = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Second", style: .plain, target: self, action: #selector(handleShowSecondViewController))
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Touch Count : \(touches.count)")
-        for (index, touch) in touches.enumerated() {
-            print("\(index) : timeStamp-\(touch.timestamp) / tapCount-\(touch.tapCount)")
-            // 동일한 부분에 대해 터치를 여러번 지속하면 그것을 재사용
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        print("========================== Motion Began")
+        print("Root ViewController Event Object : \(ObjectIdentifier(event!))")
+        switch event!.type {
+        case .touches:
+            print("Touch Events")
+        case .presses:
+            print("Press Events")
+        case .motion:
+            print("Motion Events")
+        case .remoteControl:
+            print("Remote Control Event")
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("========================== Began")
+        print("Root ViewController Event Object : \(ObjectIdentifier(event!))")
+        switch event!.type {
+        case .touches:
+            print("Touch Events")
+        case .presses:
+            print("Press Events")
+        case .motion:
+            print("Motion Events")
+        case .remoteControl:
+            print("Remote Control Event")
+        }
+        touches.forEach{print("Touch Object : \(ObjectIdentifier($0)) tapCount: \($0.tapCount)")}
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("========================== Moved")
+        touches.forEach{print("Touch Object : \(ObjectIdentifier($0))")}
+    }
+    
+    @objc func handleShowSecondViewController(){
+        self.navigationController?.pushViewController(SecondViewController(), animated: true)
+    }
+    
+    @objc func buttonDidTapped(sender: UIButton){
+        print("TARGET-ACTION : Button Did Tapped")
     }
 }
 
