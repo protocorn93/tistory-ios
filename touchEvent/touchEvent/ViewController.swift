@@ -19,13 +19,17 @@ class CustomView: UIView {
 }
 
 class CustomButton: UIButton {
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("UIRESPONDER : Button Touch Began")
-//    }
-//
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("UIRESPONDER : Button Touch Ended")
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("UIRESPONDER : Button Touch Began")
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("UIRESPONDER : Button Touch Cancelld")
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("UIRESPONDER : Button Touch Ended")
+    }
     
     override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         super.sendAction(action, to: target, for: event)
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: CustomButton! {
         didSet{
             button.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
+            button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture)))
         }
     }
     @IBOutlet weak var skyBlueView: CustomView!
@@ -100,6 +105,10 @@ class ViewController: UIViewController {
     
     @objc func buttonDidTapped(sender: UIButton){
         print("TARGET-ACTION : Button Did Tapped")
+    }
+    
+    @objc func buttonTapGesture(_ gesture: UITapGestureRecognizer){
+        print("UIGestureRecognizer : UITapGestureRecognizer")
     }
 }
 
