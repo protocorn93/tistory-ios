@@ -20,30 +20,33 @@ class CustomView: UIView {
 
 class CustomButton: UIButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         print("UIRESPONDER : Button Touch Began")
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
         print("UIRESPONDER : Button Touch Cancelld")
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         print("UIRESPONDER : Button Touch Ended")
     }
     
-    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
-        super.sendAction(action, to: target, for: event)
-        event?.touches(for: self)?.forEach({
-            switch $0.phase {
-            case .began:
-                print("Began")
-            case .ended :
-                print("Ended")
-            default:
-                print("Default")
-            }
-        })
-    }
+//    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+//        super.sendAction(action, to: target, for: event)
+//        event?.touches(for: self)?.forEach({
+//            switch $0.phase {
+//            case .began:
+//                print("Began")
+//            case .ended :
+//                print("Ended")
+//            default:
+//                print("Default")
+//            }
+//        })
+//    }
 }
 
 class ViewController: UIViewController {
@@ -51,7 +54,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: CustomButton! {
         didSet{
             button.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
-            button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture)))
+            var singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture(_:)))
+            var doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture(_:)))
+            doubleTapGesture.numberOfTapsRequired = 2
+//            button.addGestureRecognizer(singleTapGesture)
+            button.addGestureRecognizer(doubleTapGesture)
         }
     }
     @IBOutlet weak var skyBlueView: CustomView!
