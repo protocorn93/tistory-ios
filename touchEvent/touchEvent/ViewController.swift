@@ -34,19 +34,19 @@ class CustomButton: UIButton {
         print("UIRESPONDER : Button Touch Ended")
     }
     
-//    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
-//        super.sendAction(action, to: target, for: event)
-//        event?.touches(for: self)?.forEach({
-//            switch $0.phase {
-//            case .began:
-//                print("Began")
-//            case .ended :
-//                print("Ended")
-//            default:
-//                print("Default")
-//            }
-//        })
-//    }
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+        super.sendAction(action, to: target, for: event)
+        event?.touches(for: self)?.forEach({
+            switch $0.phase {
+            case .began:
+                print("Began")
+            case .ended :
+                print("Ended")
+            default:
+                print("Default")
+            }
+        })
+    }
 }
 
 class ViewController: UIViewController {
@@ -55,10 +55,14 @@ class ViewController: UIViewController {
         didSet{
             button.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
             var singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture(_:)))
-            var doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture(_:)))
-            doubleTapGesture.numberOfTapsRequired = 2
-//            button.addGestureRecognizer(singleTapGesture)
-            button.addGestureRecognizer(doubleTapGesture)
+            singleTapGesture.delaysTouchesBegan = true
+//            singleTapGesture.cancelsTouchesInView = false
+            button.addGestureRecognizer(singleTapGesture)
+//            var doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapGesture(_:)))
+//            doubleTapGesture.numberOfTapsRequired = 2
+//            doubleTapGesture.cancelsTouchesInView = false
+//            doubleTapGesture.delaysTouchesEnded = false
+//            button.addGestureRecognizer(doubleTapGesture)
         }
     }
     @IBOutlet weak var skyBlueView: CustomView!
@@ -118,4 +122,3 @@ class ViewController: UIViewController {
         print("UIGestureRecognizer : UITapGestureRecognizer")
     }
 }
-
