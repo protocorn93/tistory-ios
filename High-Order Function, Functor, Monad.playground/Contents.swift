@@ -1,77 +1,69 @@
 import UIKit
 
-let optionalString: String? = "Jimmy"
-
-func sayMyName(_ name: String) -> String {
-    return "My name is \(name)"
+func doNotingButReturn(_ variable: String?) -> String? {
+    return variable
 }
-
-// Without Map
-if let unwrappedString = optionalString {
-//    print(sayMyName(unwrappedString))
-}
-
-// Using Map
-
-//print(optionalString.map({sayMyName($0)}))
-
-// My Map
 
 extension Optional {
-    func myMap<U>(_ transform: (Wrapped)->U) -> U?{
+    func myMap<U>(_ transform: (Wrapped)->U) -> U? {
         switch self {
         case .some(let value):
-            return .some(transform(value))
+            return transform(value)
+        case .none:
+            return .none
+        }
+    }
+    
+    func myFlatMap<U>(_ transform: (Wrapped)->U?) -> U?{
+        switch self {
+        case .some(let value):
+            return transform(value)
         case .none:
             return .none
         }
     }
 }
 
-//print(optionalString.myMap({sayMyName($0)}))
+/* myMap & myFlatMap
+print(type(of: Optional("3").myMap{Int($0)})) // U == Int? , U? == Int??
+print(type(of: Optional("3").myFlatMap{Int($0)})) // U? == Int?, U? == Int?
+*/
 
-// How does map apply to array
+/*
+print(Optional(3).myMap(half))
+print(Optional(20).myFlatMap(half))
+*/
 
-let arrayOfInts = [2,4,6]
-func timesTwo(value: Int) -> Int {
-    return value * 2
+let stringNumbers:[String] = ["1", "2", "Fish"]
+let mappedNumbers = stringNumbers.map {Int($0)}
+let flatMappedNumbers = stringNumbers.compactMap {Int($0)}
+
+let optionalStringArray:[String?] = ["1", "2", nil, "3"]
+
+let mappedOptionalStringArray = optionalStringArray.map(doNotingButReturn)
+let compactMappedOptionalStringArray = optionalStringArray.compactMap(doNotingButReturn)
+
+extension Array {
+    func myMap<T>(_ transform: (Element)-> T?)->[T?]{
+        var result:[T?] = []
+        self.forEach { (element) in
+            result.append(transform(element))
+        }
+        return result
+    }
+    
+    func myCompactMap<T>(_ transform: (Element) -> T?) -> [T] {
+        return myMap(transform).filter { $0 != nil }.map { $0! }
+    }
 }
 
-// 1. loop
-for value in arrayOfInts {
-//    print(timesTwo(value: value))
+let myMappedOptionalStringArray = optionalStringArray.myMap(doNotingButReturn)
+let myCompactMappedOptionalStringArray = optionalStringArray.myCompactMap(doNotingButReturn)
+let myMappedNumbers = stringNumbers.myMap {Int($0)}
+let myCompactMappedNumbers = stringNumbers.myCompactMap {Int($0)}
+
+func half(a: Int) -> Int? {
+    return a % 2 == 0 ? a / 2 : .none
 }
 
-// 2. Map
-let doubledArray = arrayOfInts.map({timesTwo(value: $0)})
-//doubledArray.forEach({print($0)})
-
-// 3. define the function inside the closure
-let functionDefinedInClosureDoubledArray = arrayOfInts.map{$0*2}
-//functionDefinedInClosureDoubledArray.forEach({print($0)})
-
-let numbersString = ["1", "2", "Fish"]
-
-let mappedNumbers = numbersString.map{Int($0)}
-let flatMappedNumbers = numbersString.flatMap{Int($0)}
-
-//mappedNumbers.forEach({print($0)})
-//flatMappedNumbers.forEach({print($0)})
-
-
-
-let stringNumber:String? = "5"
-let number = stringNumber.flatMap {Int($0)}
-print(stringNumber.map {Int($0)})
-print(stringNumber.flatMap {Int($0)})
-print(type(of: number))
-
-func doubledEven(_ num: Int) -> Int? {
-    return num % 2 == 0 ? num * 2 : nil
-}
-
-let result1 = Optional(4).map(doubledEven)
-let result2 = Optional(4).flatMap(doubledEven)
-
-print(result1)
-print(result2)
+let value = Optional(20).flatMap(half).flatMap(half).flatMap(half)
