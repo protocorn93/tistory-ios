@@ -28,6 +28,13 @@ class ViewController: UIViewController{
                 print("ACCEPTED")
             }
         }
+        
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default, options: [])
+            try recordingSession.overrideOutputAudioPort(.speaker)
+        }catch {
+            print(error.localizedDescription)
+        }
     }
     
     func getDirectory()->URL {
@@ -73,14 +80,11 @@ class ViewController: UIViewController{
             
             let path = getDirectory().appendingPathComponent("MothersVoice.m4a")
             do {
-                audioPlayer = try AVAudioPlayer(contentsOf: path, fileTypeHint: AVFileType.m4a.rawValue)
+                audioPlayer = try AVAudioPlayer(contentsOf: path, fileTypeHint: "m4a")
                 audioPlayer?.delegate = self
-                print(audioPlayer?.duration)
-                print(audioPlayer?.volume)
                 audioPlayer?.volume = 1.0
                 audioPlayer?.prepareToPlay()
                 audioPlayer?.play()
-                print(audioPlayer?.url)
             } catch let error as NSError {
                 print("audioPlayer error: \(error.localizedDescription)")
             }
