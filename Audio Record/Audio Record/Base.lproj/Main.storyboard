@@ -17,11 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvo-fE-U7o">
-                                <rect key="frame" x="166.5" y="223" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDX-gk-3gb">
                                 <rect key="frame" x="138.5" y="318.5" width="98" height="30"/>
                                 <subviews>
@@ -50,22 +45,45 @@
                                     <action selector="playRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMH-ZQ-Nni"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="nHv-HH-JHT">
+                                <rect key="frame" x="54.5" y="347" width="266.5" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU6-8w-IgE">
+                                <rect key="frame" x="324" y="352" width="35.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heF-WT-ptd">
+                                <rect key="frame" x="5.5" y="352" width="46" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tvo-fE-U7o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="55k-st-CNJ"/>
+                            <constraint firstItem="pU6-8w-IgE" firstAttribute="leading" secondItem="nHv-HH-JHT" secondAttribute="trailing" constant="5" id="1A9-a0-3vW"/>
                             <constraint firstItem="zuj-wm-luQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="AEk-mQ-7Wc"/>
+                            <constraint firstItem="zuj-wm-luQ" firstAttribute="top" secondItem="nHv-HH-JHT" secondAttribute="bottom" constant="8" id="Abs-tb-GXI"/>
+                            <constraint firstItem="pU6-8w-IgE" firstAttribute="centerY" secondItem="nHv-HH-JHT" secondAttribute="centerY" id="Orc-yu-7Rg"/>
                             <constraint firstItem="bDX-gk-3gb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rp7-t0-pwR"/>
+                            <constraint firstItem="nHv-HH-JHT" firstAttribute="leading" secondItem="heF-WT-ptd" secondAttribute="trailing" constant="5" id="T0M-Zu-q8y"/>
                             <constraint firstItem="zuj-wm-luQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZX9-BS-hDe"/>
-                            <constraint firstItem="Tvo-fE-U7o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.7" id="hYs-Ji-KDZ"/>
+                            <constraint firstItem="nHv-HH-JHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zsr-LZ-HVu"/>
+                            <constraint firstItem="heF-WT-ptd" firstAttribute="centerY" secondItem="nHv-HH-JHT" secondAttribute="centerY" id="pWa-yy-lgD"/>
+                            <constraint firstItem="nHv-HH-JHT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="rST-OS-pTT"/>
                             <constraint firstItem="bDX-gk-3gb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="taI-2A-uJW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currentTimeLabel" destination="heF-WT-ptd" id="V6h-at-tTL"/>
+                        <outlet property="durationTimeLabel" destination="pU6-8w-IgE" id="wtU-Ee-yra"/>
                         <outlet property="playButton" destination="zuj-wm-luQ" id="4Ke-Un-Lmf"/>
                         <outlet property="recordButton" destination="6M0-jA-9CT" id="hYE-ze-FTg"/>
                         <outlet property="stopButton" destination="vS3-UX-3Di" id="sL7-H7-o9f"/>
+                        <outlet property="timeSlider" destination="nHv-HH-JHT" id="HfM-DV-iai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
