@@ -34,7 +34,7 @@ class ViewController: UIViewController{
         }
         
         do {
-            try recordingSession.setCategory(.playAndRecord, mode: .default, options: [])
+            try recordingSession.setCategory(.playAndRecord, mode: .default, options: [.allowBluetooth, .allowBluetoothA2DP])
             try recordingSession.overrideOutputAudioPort(.speaker)
         }catch {
             print(error.localizedDescription)
