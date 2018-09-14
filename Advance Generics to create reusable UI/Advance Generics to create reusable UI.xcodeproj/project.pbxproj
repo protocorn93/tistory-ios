@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EF828EA214BAD8700897C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF828E9214BAD8700897C37 /* AppDelegate.swift */; };
+		3EF828EF214BAD8700897C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF828ED214BAD8700897C37 /* Main.storyboard */; };
+		3EF828F1214BAD8800897C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF828F0214BAD8800897C37 /* Assets.xcassets */; };
+		3EF828F4214BAD8800897C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF828F2214BAD8800897C37 /* LaunchScreen.storyboard */; };
+		3EF828FC214BB0A600897C37 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF828FB214BB0A600897C37 /* Reusable.swift */; };
+		3EF828FE214BB2FC00897C37 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF828FD214BB2FC00897C37 /* BaseTableViewCell.swift */; };
+		3EF82900214BB3E900897C37 /* GenericTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF828FF214BB3E900897C37 /* GenericTableViewDataSource.swift */; };
+		3EF82904214BB48600897C37 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF82903214BB48600897C37 /* Searchable.swift */; };
+		3EF82906214BBA0A00897C37 /* BaseTableViewSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF82905214BBA0A00897C37 /* BaseTableViewSearchController.swift */; };
+		3EF82909214BBEA900897C37 /* SoccerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF82908214BBEA900897C37 /* SoccerPlayer.swift */; };
+		3EF8290C214BBF8300897C37 /* SoccerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8290B214BBF8300897C37 /* SoccerCell.swift */; };
+		3EF8290E214BC12E00897C37 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8290D214BC12E00897C37 /* ListTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EF828E6214BAD8700897C37 /* Advance Generics to create reusable UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Advance Generics to create reusable UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EF828E9214BAD8700897C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EF828EE214BAD8700897C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EF828F0214BAD8800897C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EF828F3214BAD8800897C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EF828F5214BAD8800897C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EF828FB214BB0A600897C37 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		3EF828FD214BB2FC00897C37 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		3EF828FF214BB3E900897C37 /* GenericTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataSource.swift; sourceTree = "<group>"; };
+		3EF82903214BB48600897C37 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		3EF82905214BBA0A00897C37 /* BaseTableViewSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewSearchController.swift; sourceTree = "<group>"; };
+		3EF82908214BBEA900897C37 /* SoccerPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerPlayer.swift; sourceTree = "<group>"; };
+		3EF8290B214BBF8300897C37 /* SoccerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerCell.swift; sourceTree = "<group>"; };
+		3EF8290D214BC12E00897C37 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EF828E3214BAD8700897C37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EF828DD214BAD8700897C37 = {
+			isa = PBXGroup;
+			children = (
+				3EF828E8214BAD8700897C37 /* Advance Generics to create reusable UI */,
+				3EF828E7214BAD8700897C37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EF828E7214BAD8700897C37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EF828E6214BAD8700897C37 /* Advance Generics to create reusable UI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EF828E8214BAD8700897C37 /* Advance Generics to create reusable UI */ = {
+			isa = PBXGroup;
+			children = (
+				3EF8290A214BBF7600897C37 /* Cells */,
+				3EF82907214BBE9B00897C37 /* Models */,
+				3EF82902214BB40400897C37 /* GenericBaseFiles */,
+				3EF82901214BB3EF00897C37 /* Protocols */,
+				3EF828E9214BAD8700897C37 /* AppDelegate.swift */,
+				3EF828ED214BAD8700897C37 /* Main.storyboard */,
+				3EF8290D214BC12E00897C37 /* ListTableViewController.swift */,
+				3EF828F0214BAD8800897C37 /* Assets.xcassets */,
+				3EF828F2214BAD8800897C37 /* LaunchScreen.storyboard */,
+				3EF828F5214BAD8800897C37 /* Info.plist */,
+			);
+			path = "Advance Generics to create reusable UI";
+			sourceTree = "<group>";
+		};
+		3EF82901214BB3EF00897C37 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3EF828FB214BB0A600897C37 /* Reusable.swift */,
+				3EF82903214BB48600897C37 /* Searchable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3EF82902214BB40400897C37 /* GenericBaseFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3EF828FD214BB2FC00897C37 /* BaseTableViewCell.swift */,
+				3EF828FF214BB3E900897C37 /* GenericTableViewDataSource.swift */,
+				3EF82905214BBA0A00897C37 /* BaseTableViewSearchController.swift */,
+			);
+			path = GenericBaseFiles;
+			sourceTree = "<group>";
+		};
+		3EF82907214BBE9B00897C37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EF82908214BBEA900897C37 /* SoccerPlayer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3EF8290A214BBF7600897C37 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EF8290B214BBF8300897C37 /* SoccerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EF828E5214BAD8700897C37 /* Advance Generics to create reusable UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EF828F8214BAD8800897C37 /* Build configuration list for PBXNativeTarget "Advance Generics to create reusable UI" */;
+			buildPhases = (
+				3EF828E2214BAD8700897C37 /* Sources */,
+				3EF828E3214BAD8700897C37 /* Frameworks */,
+				3EF828E4214BAD8700897C37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Advance Generics to create reusable UI";
+			productName = "Advance Generics to create reusable UI";
+			productReference = 3EF828E6214BAD8700897C37 /* Advance Generics to create reusable UI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EF828DE214BAD8700897C37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "이동건";
+				TargetAttributes = {
+					3EF828E5214BAD8700897C37 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 3EF828E1214BAD8700897C37 /* Build configuration list for PBXProject "Advance Generics to create reusable UI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EF828DD214BAD8700897C37;
+			productRefGroup = 3EF828E7214BAD8700897C37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EF828E5214BAD8700897C37 /* Advance Generics to create reusable UI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EF828E4214BAD8700897C37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF828F4214BAD8800897C37 /* LaunchScreen.storyboard in Resources */,
+				3EF828F1214BAD8800897C37 /* Assets.xcassets in Resources */,
+				3EF828EF214BAD8700897C37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EF828E2214BAD8700897C37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF828FE214BB2FC00897C37 /* BaseTableViewCell.swift in Sources */,
+				3EF82904214BB48600897C37 /* Searchable.swift in Sources */,
+				3EF8290C214BBF8300897C37 /* SoccerCell.swift in Sources */,
+				3EF828FC214BB0A600897C37 /* Reusable.swift in Sources */,
+				3EF82909214BBEA900897C37 /* SoccerPlayer.swift in Sources */,
+				3EF82900214BB3E900897C37 /* GenericTableViewDataSource.swift in Sources */,
+				3EF8290E214BC12E00897C37 /* ListTableViewController.swift in Sources */,
+				3EF828EA214BAD8700897C37 /* AppDelegate.swift in Sources */,
+				3EF82906214BBA0A00897C37 /* BaseTableViewSearchController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EF828ED214BAD8700897C37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EF828EE214BAD8700897C37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3EF828F2214BAD8800897C37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EF828F3214BAD8800897C37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EF828F6214BAD8800897C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3EF828F7214BAD8800897C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EF828F9214BAD8800897C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 452DHHAC9T;
+				INFOPLIST_FILE = "Advance Generics to create reusable UI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dk.Advance-Generics-to-create-reusable-UI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EF828FA214BAD8800897C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 452DHHAC9T;
+				INFOPLIST_FILE = "Advance Generics to create reusable UI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dk.Advance-Generics-to-create-reusable-UI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EF828E1214BAD8700897C37 /* Build configuration list for PBXProject "Advance Generics to create reusable UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EF828F6214BAD8800897C37 /* Debug */,
+				3EF828F7214BAD8800897C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EF828F8214BAD8800897C37 /* Build configuration list for PBXNativeTarget "Advance Generics to create reusable UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EF828F9214BAD8800897C37 /* Debug */,
+				3EF828FA214BAD8800897C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EF828DE214BAD8700897C37 /* Project object */;
+}
